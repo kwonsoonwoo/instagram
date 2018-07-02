@@ -10,6 +10,11 @@ class User(AbstractUser):
         ('f', '여성'),
         ('x', '선택안함'),
     )
+    # CHOICES_USER_TYPE = (
+    #     ('d', 'Django'),
+    #     ('f', 'Facebook'),
+    # )
+    # user_type = models.CharField(choices=CHOICES_USER_TYPE, default='d')
     img_profile = models.ImageField(upload_to='user', blank=True)
     site = models.URLField(blank=True)
     introduce = models.TextField(blank=True)

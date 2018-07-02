@@ -31,6 +31,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Facebook
+FACEBOOK_APP_ID = '412499575922094'
+FACEBOOK_APP_SECRET_CODE = '1c90c2e4375f1c934e11afb1f27b3f41'
+
 # Auth
 AUTH_USER_MODEL = 'members.User'
 LOGIN_URL = 'members:login'
