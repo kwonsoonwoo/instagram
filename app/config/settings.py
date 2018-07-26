@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_extensions',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -98,8 +99,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'instagram',
-        'USER': 'lhy',
-        'PASSWORD': '',
+        'USER': 'ksw',
+        'PASSWORD': 'rnjstnsdn',
         'PORT': 5432,
         'HOST': 'localhost',
     }
