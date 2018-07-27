@@ -18,15 +18,25 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from posts.apis import PostList
+from members.apis import UserList
+from posts.apis.posts import PostList
 from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('posts/', include('posts.urls')),
-    path('members/', include('members.urls')),
+    path('posts/', include('posts.urls.views')),
+    path('members/', include('members.urls.views')),
     path('', views.index, name='index'),
-    path('api/posts/', PostList.as_view(), name='post-list')
+
+
+    # api/로 시작하는 경우를 공통적으로 사용하도록
+    # config.urls와
+    #   post.urls
+    #   members.urls
+    #           를 적절히 수정 (post.urls, members.urls모듈을 패키지화해서 분리해야함)
+
+    path('api/posts/', include('posts.urls.apis')),
+    path('api/users/', include('members.urls.apis')),
 ] + static(
         prefix=settings.MEDIA_URL,
         document_root=settings.MEDIA_ROOT,
