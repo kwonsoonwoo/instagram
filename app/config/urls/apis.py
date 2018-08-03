@@ -2,6 +2,6 @@
 from django.urls import path, include
 
 urlpatterns = [
-    path('api/posts/', include('posts.urls.apis')),
-    path('api/users/', include('members.urls.apis')),
+    path('posts/', include('posts.urls.apis')),
+    path('users/', include('members.urls.apis')),
 ]

@@ -1,5 +1,6 @@
 from rest_framework import serializers
 
+from members.serializers import UserBaseSerializer
 from ..models import Post
 
 __all__ = (
@@ -8,6 +9,8 @@ __all__ = (
 
 
 class PostBaseSerializer(serializers.ModelSerializer):
+    author = UserBaseSerializer(required=False)
+
     class Meta:
         model = Post
         fields = (
@@ -19,3 +22,7 @@ class PostBaseSerializer(serializers.ModelSerializer):
             'tags',
             'like_users',
         )
+
+    read_only_fields = (
+        'author',
+    )
