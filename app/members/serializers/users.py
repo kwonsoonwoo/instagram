@@ -8,9 +8,8 @@ class UserBaseSerializer(serializers.ModelSerializer):
         model = User
         fields = (
             'pk',
+            'username',
             'img_profile',
-            'site',
-            'introduce',
-            'gender',
-            'to_relation_users',
+            'first_name',
+            'last_name',
         )
